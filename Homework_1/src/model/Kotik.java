@@ -1,3 +1,5 @@
+package model;
+
 public class Kotik {
 
     private String name;

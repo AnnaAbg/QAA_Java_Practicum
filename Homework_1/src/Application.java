@@ -1,3 +1,7 @@
+import model.Kotik;
+
+import static model.Kotik.getCatCount;
+
 public class Application {
 
     public static void main(String[] args) {
@@ -11,9 +15,6 @@ public class Application {
         cat.setWeight(2);
         cat.setMeow("Meow");
         cat.setHungerLevel(5);
-
-        //   cat.liveAnotherDay();
-        //   System.out.println("Cat's name: " + cat.getName());
 
         System.out.println("---------------------------------------");
 
@@ -33,6 +34,6 @@ public class Application {
          * Counting number of Cats
          */
 
-        System.out.println("Number of cats created: " + Kotik.getCatCount());
+        System.out.println("Number of cats created: " + getCatCount());
     }
 }
