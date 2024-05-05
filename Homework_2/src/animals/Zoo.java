@@ -119,12 +119,12 @@ public class Zoo {
          * Pond Animals
          */
 
-        Swim[] pondS = {duck, salmon};
-        pondS[0] = new Duck();
-        pondS[1] = new SalmonFish();
+        Swim[] pond = {duck, salmon};
+        pond[0] = new Duck();
+        pond[1] = new SalmonFish();
 
-        for (int i = 0; i < pondS.length; i++) {
-            pondS[i].swim();
+        for (int i = 0; i < pond.length; i++) {
+            pond[i].swim();
         }
     }
 }
