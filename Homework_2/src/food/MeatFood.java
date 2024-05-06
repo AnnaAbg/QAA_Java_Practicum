@@ -1,6 +1,6 @@
 package food;
 
-public class Grass extends Food {
+public class MeatFood extends Food{
 
     @Override
     public int getFoodValue() {

@@ -4,6 +4,7 @@ import animals.actions.Run;
 import animals.actions.Voice;
 import food.Food;
 import food.Grass;
+import food.Leaves;
 
 public class Deer extends Herbivore implements Run, Voice {
 
@@ -13,8 +14,8 @@ public class Deer extends Herbivore implements Run, Voice {
 
     @Override
     public void eat(Food food) {
-        if (food instanceof Grass) {
-            System.out.println("Deer primarily consume grasses, fruits, nuts.");
+        if (food instanceof Grass || food instanceof Leaves) {
+            System.out.println("Deer primarily consume grasses and leaves.");
         } else {
             System.out.println("Deer can't eat " + food.getClass().getSimpleName() + ". ");
         }

@@ -2,8 +2,10 @@ package animals;
 
 import animals.actions.Fly;
 import animals.actions.Voice;
+import food.FishFood;
 import food.Food;
-import food.Meat;
+import food.InsectsFood;
+import food.MeatFood;
 
 public class Falcon extends Carnivore implements Fly, Voice {
 
@@ -13,10 +15,10 @@ public class Falcon extends Carnivore implements Fly, Voice {
 
     @Override
     public void eat(Food food) {
-        if (food instanceof Meat) {
-            System.out.println("Falcons primarily consume birds, insects, reptiles.");
+        if (food instanceof MeatFood || food instanceof FishFood || food instanceof InsectsFood) {
+            System.out.println("Falcons primarily consume meat, fish and insects. ");
         } else {
-            System.out.println("Falcon can't eat " + food.getClass().getSimpleName() + ". ");
+            System.out.println("Falcons can't eat " + food.getClass().getSimpleName() + ". ");
         }
     }
 

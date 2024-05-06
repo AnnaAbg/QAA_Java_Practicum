@@ -3,9 +3,7 @@ package animals;
 import animals.actions.Run;
 import animals.actions.Swim;
 import animals.actions.Voice;
-import food.Food;
-import food.Grass;
-import food.Meat;
+import food.*;
 
 public class Duck extends Herbivore implements Swim, Run, Voice {
 
@@ -16,8 +14,8 @@ public class Duck extends Herbivore implements Swim, Run, Voice {
 
     @Override
     public void eat(Food food) {
-        if (food instanceof Meat || food instanceof Grass) {
-            System.out.println("Ducks are omnivores, can eat both: meat and grass. ");
+        if (( food instanceof FishFood || food instanceof AquaticPlants)){
+            System.out.println("Ducks are omnivores, can eat both plants and meat. ");
         }
     }
 

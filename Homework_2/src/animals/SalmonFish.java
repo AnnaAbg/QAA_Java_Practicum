@@ -1,8 +1,10 @@
 package animals;
 
 import animals.actions.Swim;
+import food.AquaticPlants;
+import food.FishFood;
 import food.Food;
-import food.Meat;
+import food.MeatFood;
 
 public class SalmonFish extends Carnivore implements Swim {
 
@@ -12,8 +14,8 @@ public class SalmonFish extends Carnivore implements Swim {
 
     @Override
     public void eat(Food food) {
-        if (food instanceof Meat) {
-            System.out.println("Salmon primarily consume small fish. ");
+        if (food instanceof FishFood) {
+            System.out.println("Salmon primarily eat small fish. ");
         } else {
             System.out.println("Salmon can't eat " + food.getClass().getSimpleName());
         }

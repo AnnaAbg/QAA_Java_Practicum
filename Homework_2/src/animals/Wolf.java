@@ -2,8 +2,9 @@ package animals;
 
 import animals.actions.Run;
 import animals.actions.Voice;
+import food.FishFood;
 import food.Food;
-import food.Meat;
+import food.MeatFood;
 
 public class Wolf extends Carnivore implements Run, Voice {
 
@@ -13,8 +14,8 @@ public class Wolf extends Carnivore implements Run, Voice {
 
     @Override
     public void eat(Food food) {
-        if (food instanceof Meat) {
-            System.out.println("Wolves primarily consume " + food.getClass().getSimpleName());
+        if (food instanceof MeatFood || food instanceof FishFood) {
+            System.out.println("Wolves primarily eat meat and fish. ");
         } else {
             System.out.println("Wolves can't eat " + food.getClass().getSimpleName());
         }
