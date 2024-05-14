@@ -1,5 +1,7 @@
 package animals;
 
+import animals.aviarySizeEnum.AviarySize;
+import animals.exception.WrongFoodException;
 import food.Food;
 
 public abstract class Animals {

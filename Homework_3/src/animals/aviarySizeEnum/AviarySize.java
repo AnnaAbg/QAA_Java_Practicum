@@ -1,4 +1,4 @@
-package animals;
+package animals.aviarySizeEnum;
 
 public enum AviarySize {
 

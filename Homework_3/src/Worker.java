@@ -1,7 +1,7 @@
 import animals.Animals;
 import animals.Carnivore;
 import animals.Herbivore;
-import animals.WrongFoodException;
+import animals.exception.WrongFoodException;
 import animals.actions.Voice;
 import food.*;
 

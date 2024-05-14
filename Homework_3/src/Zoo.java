@@ -1,4 +1,6 @@
 import animals.*;
+import animals.aviarySizeEnum.AviarySize;
+import animals.exception.WrongFoodException;
 import food.*;
 
 import java.util.Map;

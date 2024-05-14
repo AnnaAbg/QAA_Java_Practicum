@@ -3,6 +3,8 @@ package animals;
 import animals.actions.Run;
 import animals.actions.Swim;
 import animals.actions.Voice;
+import animals.aviarySizeEnum.AviarySize;
+import animals.exception.WrongFoodException;
 import food.*;
 
 public class Duck extends Herbivore implements Swim, Run, Voice {

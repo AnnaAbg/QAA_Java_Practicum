@@ -1,5 +1,6 @@
 package animals;
 
+import animals.aviarySizeEnum.AviarySize;
 import java.util.HashMap;
 import java.util.Map;
 

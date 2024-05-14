@@ -1,6 +1,8 @@
 package animals;
 
 import animals.actions.Swim;
+import animals.aviarySizeEnum.AviarySize;
+import animals.exception.WrongFoodException;
 import food.FishFood;
 import food.Food;
 

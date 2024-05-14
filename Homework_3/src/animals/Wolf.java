@@ -2,6 +2,8 @@ package animals;
 
 import animals.actions.Run;
 import animals.actions.Voice;
+import animals.aviarySizeEnum.AviarySize;
+import animals.exception.WrongFoodException;
 import food.FishFood;
 import food.Food;
 import food.MeatFood;
