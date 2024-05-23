@@ -1,42 +1,54 @@
 package MathTests;
 
+import org.example.calculator.BasicCalculator;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 /**
- * The MultiplicationTest class extends BaseTest to provide test cases
- * for the multiplication functionality of the MathOperations class.
+ * The MultiplicationTest class contains unit tests for testing the multiplication operation of the BasicCalculator class code.
  */
 
-public class MultiplicationTest extends BaseTest {
+public class MultiplicationTest {
+
+    private BasicCalculator calculator;
 
     /**
-     * Tests the multiply method with two positive integers.
-     * Asserts that the result is correct for the happy path scenario.
+     * Sets up the test environment by initializing a BasicCalculator instance.
+     */
+
+    @BeforeMethod
+    public void setUp() {
+        calculator = new BasicCalculator();
+    }
+
+    /**
+     * Tests the multiplication operation with two positive integers.
+     *
+     * This is the happy path test case.
      */
 
     @Test
     public void testMultiplicationHappyPath() {
-        Assert.assertEquals(mathOperations.multiply(5, 5), 25);
+        Assert.assertEquals(calculator.calculate(5, "*", 5), 25);
     }
 
     /**
-     * Tests the multiply method with a negative and a positive integer.
-     * Asserts that the result is correct when multiplying a negative value with a positive value.
+     * The multiplication operation with two negative integers.
      */
 
     @Test
     public void testMultiplicationWithNegativeValues() {
-        Assert.assertEquals(mathOperations.multiply(-3, 4), -12);
+        ;
+        Assert.assertEquals(calculator.calculate(-3, "*", -4), 12);
     }
 
     /**
-     * Tests the multiply method with zero.
-     * Asserts that the result is correct when multiplying any number with zero.
+     * The multiplication operation with one operand being zero.
      */
 
     @Test
     public void testMultiplicationWithZero() {
-        Assert.assertEquals(mathOperations.multiply(5, 0), 0);
+        Assert.assertEquals(calculator.calculate(5, "*", 0), 0);
     }
 }

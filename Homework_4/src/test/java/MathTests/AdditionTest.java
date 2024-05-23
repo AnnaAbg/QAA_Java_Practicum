@@ -1,52 +1,60 @@
 package MathTests;
 
+import org.example.calculator.BasicCalculator;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 /**
- * The AdditionTest class extends BaseTest to provide test cases
- * for the addition functionality of the MathOperations class.
+ * The AdditionTest class contains unit tests for testing the addition operation of the BasicCalculator class code.
  */
 
-public class AdditionTest extends BaseTest {
+public class AdditionTest {
+    private BasicCalculator calculator;
 
     /**
-     * Tests the add method with two positive integers.
-     * Asserts that the result is correct for the happy path scenario.
+     * Sets up the test environment by initializing a BasicCalculator instance.
+     */
+    @BeforeMethod
+    public void setUp() {
+        calculator = new BasicCalculator();
+    }
+
+    /**
+     * The addition operation with two positive integers.
+     *
+     * This is the happy path test case.
      */
 
     @Test
     public void testAdditionHappyPath() {
-        Assert.assertEquals(mathOperations.add(2, 5), 7);
+        Assert.assertEquals(calculator.calculate(5, "+", 7), 12);
     }
 
     /**
-     * Tests the add method with a negative and a positive integer.
-     * Asserts that the result is correct when adding a negative value.
+     * Addition operation with a negative and a positive integer.
      */
 
     @Test
     public void testAdditionWithNegativeValue() {
-        Assert.assertEquals(mathOperations.add(-3, 4), 1);
+        Assert.assertEquals(calculator.calculate(-3, "+", 4), 1);
     }
 
     /**
-     * Tests the add method with two negative integers.
-     * Asserts that the result is correct when adding negative values.
+     * The addition operation with two negative integers.
      */
 
     @Test
     public void testAdditionWithNegativeValues() {
-        Assert.assertEquals(mathOperations.add(-3, -4), -7);
+        Assert.assertEquals(calculator.calculate(-3, "+", -4), -7);
     }
 
     /**
-     * Tests the add method with two zeros.
-     * Asserts that the result is correct when adding zero values.
+     * The addition operation with zero values.
      */
 
     @Test
     public void testAdditionWithZero() {
-        Assert.assertEquals(mathOperations.add(0, 0), 0);
+        Assert.assertEquals(calculator.calculate(0, "+", 0), 0);
     }
 }

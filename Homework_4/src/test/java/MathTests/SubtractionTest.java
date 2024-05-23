@@ -1,52 +1,62 @@
 package MathTests;
 
+import org.example.calculator.BasicCalculator;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 /**
- * The SubtractionTest class extends BaseTest to provide test cases
- * for the subtraction functionality of the MathOperations class.
+ * The SubtractionTest class contains unit tests for testing the subtraction operation of the BasicCalculator class code.
  */
 
-public class SubtractionTest extends BaseTest {
+public class SubtractionTest {
+
+    private BasicCalculator calculator;
 
     /**
-     * Tests the subtract method with two positive integers.
-     * Asserts that the result is correct for the happy path scenario.
+     * Sets up the test environment by initializing a BasicCalculator instance.
+     */
+
+    @BeforeClass
+    public void setUp() {
+        calculator = new BasicCalculator();
+    }
+
+    /**
+     * Tests the subtraction operation with two positive integers.
+     *
+     * This is the happy path test case.
      */
 
     @Test
     public void testSubtractionHappyPath() {
-        Assert.assertEquals(mathOperations.subtract(10, 3), 7);
+        Assert.assertEquals(calculator.calculate(10, "-", 3), 7);
     }
 
     /**
-     * Tests the subtract method with a negative and a positive integer.
-     * Asserts that the result is correct when subtracting a positive value from a negative value.
+     * The subtraction operation with a negative and a positive integer.
      */
 
     @Test
     public void testSubtractionWithNegativeValue() {
-        Assert.assertEquals(mathOperations.subtract(-3, 5), -8);
+        Assert.assertEquals(calculator.calculate(-3, "-", 5), -8);
     }
 
     /**
-     * Tests the subtract method with two negative integers.
-     * Asserts that the result is correct when subtracting negative values.
+     * The subtraction operation with two negative integers.
      */
 
     @Test
     public void testSubtractionWithNegativeValues() {
-        Assert.assertEquals(mathOperations.subtract(-3, -6), 3);
+        Assert.assertEquals(calculator.calculate(-3, "-", -6), 3);
     }
 
     /**
-     * Tests the subtract method with zero.
-     * Asserts that the result is correct when subtracting zero from a positive value.
+     * The subtraction operation with a zero value.
      */
 
     @Test
     public void testSubtractionWithZero() {
-        Assert.assertEquals(mathOperations.subtract(5, 0), 5);
+        Assert.assertEquals(calculator.calculate(5, "-", 0), 5);
     }
 }

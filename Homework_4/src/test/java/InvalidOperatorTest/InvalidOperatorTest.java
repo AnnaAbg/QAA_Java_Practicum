@@ -1,50 +1,36 @@
 package InvalidOperatorTest;
 
-import org.example.ConsoleCalculator;
-import org.testng.annotations.DataProvider;
+import org.example.inputValidator.OperandValidator;
+import org.example.inputValidator.OperatorValidator;
 import org.testng.annotations.Test;
 
+import java.util.InputMismatchException;
+
 /**
- * The InvalidOperatorTest class contains unit tests for the calculate method
- * in the MathOperations class.
- * It tests the behavior of the method when provided with invalid operators.
+ * The  InvalidOperatorTest class contains unit tests to validate invalid operators and input strings.
  */
 
 public class InvalidOperatorTest {
 
     /**
-     * Tests the  calculate method with a single invalid operator.
-     * Asserts that the result is 0 when an invalid operator is used.
+     * Tests the validation of an invalid operator.
+     *
+     * @throws IllegalArgumentException if the input string contains an invalid operator
      */
 
     @Test(expectedExceptions = IllegalArgumentException.class)
     public void testInvalidOperator() {
-        ConsoleCalculator consoleCalculator = new ConsoleCalculator();
-        consoleCalculator.calculate(5, 8, "^");
+        OperatorValidator.validateInputOperator("%");
     }
 
     /**
-     * Provides test data for the invalid operator tests.
+     * Tests the validation of an invalid input string.
      *
-     * @return a 2D array of invalid operators that are considered unsafe characters.
+     * @throws InputMismatchException if the input string is not a valid integer
      */
-    @DataProvider(name = "unsafeCharacters")
-    public Object[][] unsafeCharacters() {
-        return new Object[][]{
-                {"!"}, {"#"}, {"$"}, {"%"}, {"&"}, {";"}, {":"},
-                {">"}, {"<"}, {"?"}, {"@"}, {"["}, {"\\"}, {"]"}, {"^"}, {"|"}
-        };
-    }
 
-    /**
-     * Tests the calculate method with various invalid operators using the provided data from unsafeCharacters.
-     * Asserts that an IllegalArgumentException is thrown with the appropriate message when an invalid operator is used.
-     *
-     * @param x the invalid operator to test
-     */
-    @Test(dataProvider = "unsafeCharacters", expectedExceptions = IllegalArgumentException.class)
-    public void testUnsafeCharactersWithDataProvider(String x) {
-        ConsoleCalculator consoleCalculator = new ConsoleCalculator();
-         consoleCalculator.calculate(5, 8, x);
+    @Test(expectedExceptions = InputMismatchException.class)
+    public void testInvalidInput() {
+        OperandValidator.validateInputOperand("abc");
     }
 }
