@@ -37,7 +37,7 @@ public class ConsoleCalculatorApp {
                 // Prompt the user to enter the operator (+, -, *, /)
                 System.out.println("Enter an operator (+, -, *, /): ");
                 String operator = input.next();
-                validateInputOperator(input.next());
+                validateInputOperator(operator);
 
                 // Prompt the user to enter the second value
                 System.out.println("Enter second value: ");

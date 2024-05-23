@@ -16,6 +16,7 @@ public class OperandValidator {
         if (input.matches("[+-]?\\d+")) {
             return Integer.parseInt(input);
         } else {
+            // If the operand is invalid, throw an InputMismatchException
             throw new InputMismatchException("Error: Invalid input! Please use only integer numbers!");
         }
     }
