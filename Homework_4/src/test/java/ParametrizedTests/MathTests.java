@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
  * to test various arithmetic operations.
  */
 
-public class DataProviderMathTest {
+public class MathTests {
 
     private BasicCalculator calculator;
 

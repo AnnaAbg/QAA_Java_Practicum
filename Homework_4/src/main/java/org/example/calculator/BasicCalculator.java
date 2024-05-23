@@ -1,8 +1,4 @@
 package org.example.calculator;
-
-import static org.example.inputValidator.OperandValidator.validateInputOperand;
-import static org.example.inputValidator.OperatorValidator.validateInputOperator;
-
 public class BasicCalculator {
 
     /**
@@ -17,15 +13,6 @@ public class BasicCalculator {
      * @throws ArithmeticException if division by zero is attempted
      */
     public int calculate(int num1, String operator, int num2) {
-
-        // Validate operands
-//        validateInputOperand(String.valueOf(num1));
-//        validateInputOperand(String.valueOf(num2));
-
-        // Validate operator
-        // validateInputOperator(operator);
-
-
         int result = 0;
 
         // Perform calculation based on the operation

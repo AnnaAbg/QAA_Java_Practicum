@@ -1,4 +1,4 @@
-package org.example.utils;
+package utils;
 
 import org.example.calculator.BasicCalculator;
 
