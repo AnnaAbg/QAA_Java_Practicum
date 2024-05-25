@@ -14,6 +14,9 @@ import org.testng.annotations.Test;
 public class MathTests {
     private BasicCalculator calculator;
     // private Random random;
+//    private int num1;
+//    private int num2;
+//    private String operator;
 
     /**
      * Sets up the test environment by initializing a BasicCalculator instance.
@@ -21,32 +24,27 @@ public class MathTests {
     @BeforeMethod
     public void setUp() {
         calculator = new BasicCalculator();
-        // random = new Random();
+//        random = new Random();
+//        num1 = (int) (Math.random() * 100) + 1;
+//        num2 = (int) (Math.random() * 100) + 1;;
+//        operator = generateRandomOperator();
     }
-//
+
 //    private String generateRandomOperator() {
 //        String[] operators = {"+", "-", "*", "/"};
-//        return operators[random.nextInt(operators.length)];
+//        int index = (int) (Math.random() * operators.length);
+//        return operators[index];
+//        //return operators[random.nextInt(operators.length)];
 //    }
-//
+
 //    @DataProvider(name = "mathATest")
 //    public Object[][] mathATest() {
-//        Object[][] testData = new Object[12][4];
-//
-//        for (int i = 0; i < 12; i++) {
-//            int num1 = random.nextInt(100) + 1;
-//            String operator = generateRandomOperator();
-//            int num2 = random.nextInt(100) +1;
-//            int expectedResult = calculator.calculate(num1, operator, num2);
-//            testData[i] = new Object[]{num1, operator, num2, expectedResult};
-//        }
-//        return testData;
+//        int expectedResult = calculator.calculate(num1, operator, num2);
+//        return new Object[][]{
+//                {num1, operator, num2, expectedResult}
+//        };
 //    }
-//
-//    @Test(dataProvider = "mathATest")
-//    public void testMath(int num1, String operator, int num2, int expectedResult) {
-//        Assert.assertEquals(calculator.calculate(num1, operator, num2), expectedResult);
-//    }
+//}
 
     /**
      * Provides test data for arithmetic operations.
@@ -81,6 +79,7 @@ public class MathTests {
      * @param num2           the second operand
      * @param expectedResult the expected result of the operation
      */
+
     @Test(dataProvider = "mathTest")
     public void testMath(int num1, String operator, int num2, int expectedResult) {
         Assert.assertEquals(calculator.calculate(num1, operator, num2), expectedResult);
