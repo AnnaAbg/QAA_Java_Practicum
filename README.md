@@ -16,4 +16,4 @@
 
 ---
 ### Running Writter Test and Generating Allure Report with a screenshot
-![WritterTest_Allure_Report](https://github.com/AnnaAbg/QAA_Java_Practicum/assets/106620445/26c56f65-a300-461d-b189-7610fd49e755)
+![WritterTest_Allure_Report](https://github.com/AnnaAbg/QAA_Java_Practicum/assets/106620445/bd0b4323-3d7c-4ada-98d6-48edce7fa577)
