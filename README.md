@@ -14,5 +14,6 @@
 ### Running Basic Calculator Tests and Generating Allure Report with a screenshot
 ![BasicCalculatorTests_Allure_Report](https://github.com/AnnaAbg/QAA_Java_Practicum/assets/106620445/544615a9-7d12-4046-874b-fc26d10bf94f)
 
+---
 ### Running Writter Test and Generating Allure Report with a screenshot
 ![WritterTest_Allure_Report](https://github.com/AnnaAbg/QAA_Java_Practicum/assets/106620445/26c56f65-a300-461d-b189-7610fd49e755)
