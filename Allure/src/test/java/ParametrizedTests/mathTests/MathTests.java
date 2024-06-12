@@ -1,9 +1,9 @@
-package ParametrizedTests;
+package ParametrizedTests.mathTests;
 
 import io.qameta.allure.*;
 import org.example.calculator.BasicCalculator;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -15,45 +15,15 @@ import org.testng.annotations.Test;
 @Epic("Epic: Basic Calculator Tests")
 @Feature("Feature: Parametrized tests. Arithmetic Operations")
 public class MathTests {
-    private BasicCalculator calculator;
-    // private Random random;
-//    private int num1;
-//    private int num2;
-//    private String operator;
 
-    /**
-     * Sets up the test environment by initializing a BasicCalculator instance.
-     */
-    @BeforeMethod
-    @Description("Sets up the test environment by initializing a BasicCalculator instance")
+    private BasicCalculator calculator;
+
+
+    @BeforeTest
+    @Description("Sets up the test environment by initializing the calculator.")
     public void setUp() {
         calculator = new BasicCalculator();
-//        random = new Random();
-//        num1 = (int) (Math.random() * 100) + 1;
-//        num2 = (int) (Math.random() * 100) + 1;;
-
-//        num1 = random.nextInt(100) + 1;
-//        num2 = random.nextInt(100) + 1;
-
-//        operator = generateRandomOperator();
     }
-
-//    private String generateRandomOperator() {
-//        String[] operators = {"+", "-", "*", "/"};
-//        int index = (int) (Math.random() * operators.length);
-//        return operators[index];
-
-//        //return operators[random.nextInt(operators.length)];
-//    }
-
-//    @DataProvider(name = "mathATest")
-//    public Object[][] mathATest() {
-//        int expectedResult = calculator.calculate(num1, operator, num2);
-//        return new Object[][]{
-//                {num1, operator, num2, expectedResult}
-//        };
-//    }
-//}
 
     /**
      * Provides test data for arithmetic operations.
@@ -99,5 +69,3 @@ public class MathTests {
         Assert.assertEquals(calculator.calculate(num1, operator, num2), expectedResult);
     }
 }
-
-
