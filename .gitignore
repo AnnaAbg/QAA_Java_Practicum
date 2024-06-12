@@ -1,3 +1,7 @@
 /out/
 /.idea/
 /Homework_4/target/
+/Allure/.allure/
+/Allure/target/
+/Gradle/build/
+/Gradle/.gradle/
