@@ -7,7 +7,6 @@ import utils.ResponseWrapper;
 import java.io.File;
 
 import static io.restassured.RestAssured.given;
-import static utils.testDataHelper.TestDataPetHelper.*;
 
 /**
  * Provides methods to perform API requests related to pets, including creating, updating, retrieving, and deleting pets,
@@ -120,7 +119,7 @@ public class PetApiRequests {
                 .param("additionalMetadata", additionalMetadata)
                 .expect()
                 .when()
-                .post(petId + "/uploadImage")
+                .post(PET_PATH +  "/" + petId + "/uploadImage")
                 .andReturn());
     }
 }

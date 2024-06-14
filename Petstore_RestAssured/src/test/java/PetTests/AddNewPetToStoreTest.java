@@ -4,8 +4,8 @@ import base.BaseTest;
 import dto.data.PetModel;
 import dto.response.ErrorResponse;
 import io.qameta.allure.*;
+import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.Test;
-import steps.ServicePetSteps;
 
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -25,7 +25,8 @@ import static utils.testObjectBuilder.TestPetBuilder.getAddNewPetModel;
 @Feature("Add New Pet")
 public class AddNewPetToStoreTest extends BaseTest {
 
-  //  ServicePetSteps servicePetSteps = new ServicePetSteps();
+    private RequestSpecification requestSpecification;
+    // ServicePetSteps servicePetSteps = new ServicePetSteps();
 
     @Severity(SeverityLevel.CRITICAL)
     @Story("Add new pet to store with a valid pet ID")
@@ -95,12 +96,6 @@ public class AddNewPetToStoreTest extends BaseTest {
             );
         });
 
-    }
-
-    private void createNewPetModel() {
-        step("Create new pet model with different name and status", () -> {
-            petRequest = getAddNewPetModel(VALID_RANDOM_PET_ID, PENDING_STATUS);
-        });
     }
 }
 

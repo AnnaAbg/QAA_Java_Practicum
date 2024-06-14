@@ -86,7 +86,6 @@ public class DeletePetTest extends BaseTest {
             responseWrapper = petApiRequests.deletePet(VALID_RANDOM_PET_ID);
         });
 
-
         step("Check response / status code", () -> {
             int statusCode = responseWrapper.getStatusCode();
 

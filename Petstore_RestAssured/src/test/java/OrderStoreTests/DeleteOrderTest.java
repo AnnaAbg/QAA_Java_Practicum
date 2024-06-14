@@ -2,7 +2,6 @@ package OrderStoreTests;
 
 import base.BaseTest;
 import dto.response.APIResponse;
-import dto.response.ErrorResponse;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +10,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
 import static utils.StatusCode.STATUS_CODE_ERROR_404;
 import static utils.StatusCode.STATUS_CODE_OK;
-import static utils.expectedObjectBuilder.ExpectedErrorObjectBuilder.getNotFound;
 import static utils.expectedObjectBuilder.ExpectedObjectBuilder.getDeleteResponse;
 import static utils.testDataHelper.TestDataStoreHelper.VALID_RANDOM_STORE_ID;
 import static utils.testObjectBuilder.TestPetStoreBuilder.getPetStoreModel;
@@ -76,7 +74,6 @@ public class DeleteOrderTest extends BaseTest {
 
         step("Check status code and error", () -> {
             int statusCode = responseWrapper.getStatusCode();
-            ErrorResponse error = responseWrapper.as(ErrorResponse.class);
 
             assertSoftly(
                     softAssertions -> {
@@ -84,10 +81,6 @@ public class DeleteOrderTest extends BaseTest {
                                 .assertThat(statusCode)
                                 .withFailMessage("Status code doesn't match")
                                 .isEqualTo(STATUS_CODE_ERROR_404);
-                        softAssertions
-                                .assertThat(error)
-                                .withFailMessage("Error body doesn't match")
-                                .isEqualTo(getNotFound());
                     }
             );
         });

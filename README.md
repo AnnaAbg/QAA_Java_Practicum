@@ -29,15 +29,18 @@ Project contains Test classes for Pet and Store:
 
 ### Tools
 Used tools and libraries:
-* [jUnit5]
-* [AssertJ]
-* [REST Assured]
-* [Allure]
-* [Config]
-* [Faker]
-* [Jackson Databind Nullable] 
-* [Owner]
-*  [Lombok](https://projectlombok.org/)
+* [jUnit5](https://mvnrepository.com/artifact/io.qameta.allure/allure-junit5)
+* [AssertJ](https://mvnrepository.com/artifact/org.assertj/assertj-core)
+* [REST Assured](https://mvnrepository.com/artifact/io.rest-assured/rest-assured)
+* [Allure_REST Assured](https://mvnrepository.com/artifact/io.qameta.allure/allure-rest-assured)
+* [Allure](https://mvnrepository.com/artifact/org.assertj/assertj-core)
+* [Qameta Allure Plugins_Behaviors Plugin](https://mvnrepository.com/artifact/io.qameta.allure.plugins/behaviors-plugin)
+* [Faker](https://mvnrepository.com/artifact/com.github.javafaker/javafaker)
+* [Jackson Databind Nullable](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind)
+* [Owner::Core](https://mvnrepository.com/artifact/org.aeonbits.owner/owner)
+* [Lombok](https://projectlombok.org/)
+* [JUnit Jupiter (Aggregator)](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter)
+* [Maven_Surefire_Plugin](https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin)
 
 For detailed information and to search for specific versions of the tools or updates, 
 visit `[Maven Central Repository](https://mvnrepository.com/)`
@@ -46,6 +49,7 @@ visit `[Maven Central Repository](https://mvnrepository.com/)`
 
 For run tests use the command:
 
+- `mvn test`
 
 For download allure report use the command:
 
@@ -55,11 +59,12 @@ For generate allure report use the command:
 
 - `mvn allureServe`
 
+To get a clear report use the following command before running test
+
+- `mvn clean`
 
 ### PetStore project tests Allure screenshots
-![Intellij_Tests'_Screen](https://github.com/AnnaAbg/QAA_Java_Practicum/assets/106620445/2bcd9dc9-b6c5-47ae-bc3b-22c763e5b967)
-![Allure_Tests'_Overview](https://github.com/AnnaAbg/QAA_Java_Practicum/assets/106620445/1343f96c-bb45-4465-b3a0-1753bd899be4)
-![Allure_Tests'_Behaviors_Failed](https://github.com/AnnaAbg/QAA_Java_Practicum/assets/106620445/857cc825-e387-4744-bb5c-e829e12fd5cd)
-![Allure_Tests'_Behaviors_Broken](https://github.com/AnnaAbg/QAA_Java_Practicum/assets/106620445/ff571ef6-2775-4024-a3fc-c654b95a294d)
+![Allure_Report_Overview](https://github.com/AnnaAbg/QAA_Java_Practicum/assets/106620445/00f48a35-aa94-4100-97ac-40d1f6d6825e)
+![Allure_Report_Behaviors](https://github.com/AnnaAbg/QAA_Java_Practicum/assets/106620445/e635d681-8335-4495-b5b8-8a741f1bea0a)
 
 

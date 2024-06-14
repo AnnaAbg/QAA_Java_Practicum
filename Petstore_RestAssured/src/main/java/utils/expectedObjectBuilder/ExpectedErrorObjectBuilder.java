@@ -2,8 +2,6 @@ package utils.expectedObjectBuilder;
 
 import dto.response.ErrorResponse;
 
-import static utils.testDataHelper.TestDataStoreHelper.VALID_RANDOM_STORE_ID;
-
 /**
  * Utility class to build predefined {@link ErrorResponse} objects for various error scenarios.
  *
@@ -29,7 +27,7 @@ public class ExpectedErrorObjectBuilder {
 
     private static final String ORDER_NOT_FOUND_MESSAGE  = "Order Not Found";
 
-    private static final String NUMBER_FORMAT_EXCEPTION_ERROR_MESSAGE = "java.lang.NumberFormatException: For input string: " +  VALID_RANDOM_STORE_ID;
+    private static final String NUMBER_FORMAT_EXCEPTION_ERROR_MESSAGE = "java.lang.NumberFormatException: For input string: \"\"VALID_RANDOM_STORE_ID\"\"";
 
     /**
      * Returns an {@code ErrorResponse} object representing an unknown error.

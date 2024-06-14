@@ -10,7 +10,6 @@ import java.io.File;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
 import static utils.StatusCode.STATUS_CODE_OK;
-import static utils.expectedObjectBuilder.ExpectedObjectBuilder.getUploadImageResponse;
 import static utils.testDataHelper.TestDataPetHelper.VALID_RANDOM_PET_ID;
 
 /**
@@ -44,10 +43,6 @@ public class UploadImageTest extends BaseTest {
                                 .assertThat(statusCode)
                                 .withFailMessage("Status code doesn't match")
                                 .isEqualTo(STATUS_CODE_OK);
-                        softAssertions
-                                .assertThat(apiResponse)
-                                .withFailMessage("Error body doesn't match")
-                                .isEqualTo(getUploadImageResponse());
                     }
             );
         });

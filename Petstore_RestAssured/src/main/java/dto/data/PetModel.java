@@ -36,7 +36,7 @@ public class PetModel {
     @Data
     @Builder
     public static class CategoryAndTagsItem {
-        private final int id;
+        private final long id;
         private final String name;
     }
 }
