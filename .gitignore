@@ -5,3 +5,5 @@
 /Allure/target/
 /Gradle/build/
 /Gradle/.gradle/
+/Petstore_RestAssured/target/
+/Petstore_RestAssured/.allure/
