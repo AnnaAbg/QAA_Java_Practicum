@@ -7,3 +7,5 @@
 /Gradle/.gradle/
 /Petstore_RestAssured/target/
 /Petstore_RestAssured/.allure/
+/Selenium/.allure/
+/Selenium/target/
