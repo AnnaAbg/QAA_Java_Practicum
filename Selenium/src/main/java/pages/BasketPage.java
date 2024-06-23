@@ -2,10 +2,10 @@ package pages;
 
 import core.BasePage;
 import io.qameta.allure.Step;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  * BasketPage class represents the page object for the basket page.
@@ -24,18 +24,8 @@ public class BasketPage extends BasePage {
         super(driver);
     }
 
-    @FindBy(xpath = "(//a[contains(@title,'В отложенных товаров на 379 руб.')])[1]")
+    @FindBy(xpath = "//a[@title='В отложенных товаров на 379 руб.']")
     private WebElement basketWishList;
-
-    //div/a[@class='basket-link delay inner-table-block nopadding big basket-count']"
-    //By.cssSelector(".basket-link.delay.inner-table-block.nopadding.big.basket-count")
-    //div[@class='wrap_icon inner-table-block baskets big-padding']/a[contains(text(),'В отложенных товаров на 379 руб.'
-    // a[contains(text(),'В отложенных товаров на 379 руб.')]"
-    //a[@title='В отложенных товаров на 379 руб.']
-    //div/a[@title='В отложенных товаров на 379 руб.']
-    //By.cssSelector("a[rel='nofollow'].basket-link.delay.with_price.big.basket-count[href='/basket/#delayed'][title='В отложенных товаров на 379 руб.']")
-// //div[4]/div[1]/a[@title='В отложенных товаров на 379 руб.']
-
 
     @FindBy(xpath = "//a[@data-entity='basket-item-remove-delayed']")
     private WebElement addItemToOrder;
@@ -55,11 +45,32 @@ public class BasketPage extends BasePage {
     @FindBy(xpath = "//div[@class='bx-sbb-empty-cart-text']")
     private WebElement emptyCartText;
 
-
-    @Step("Get message for basket wish list count")
-    public String getMessageForBasketWishListCount() {
-        return getWait5().until(ExpectedConditions.visibilityOf(basketWishList)).getText();
+    @Step("Check if wish list basket count is displayed")
+    public boolean isWishListCountDisplayed() {
+        try {
+            return basketWishList.isDisplayed();
+        } catch (NullPointerException | org.openqa.selenium.NoSuchElementException e) {
+            return false;
+        }
     }
+
+    @Step("Check if wish list basket count  is displayed")
+    public boolean isWishListCountDisplayed(String expectedTitle) {
+        try {
+            return basketWishList.getAttribute("title").equals(expectedTitle);
+        } catch (NullPointerException | NoSuchElementException e) {
+            return false;
+        }
+    }
+    @Step("Get wish list count title")
+    public String getWishListCountTitle() {
+        try {
+            return basketWishList.getAttribute("title");
+        } catch (NullPointerException | NoSuchElementException e) {
+            return null;
+        }
+    }
+
 
     @Step("Add item to order")
     public BasketPage addItemToOrder() {

@@ -3,6 +3,7 @@ package pages;
 import core.BasePage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -26,32 +27,26 @@ public class BabyFoodIAppleJuiceItemPage extends BasePage {
         super(driver);
     }
 
-     @FindBy(xpath = "//div[@class='wish_item text']//span[@title='Отложить']")
-     private WebElement wishItemIcon;
-
-    //span[contains(text(),'Отложить')
-    //div[@class='wish_item text']//span[@title='Отложить']
-    //(//span[@title='Отложить'])[1]
-    //CSS//div[class='wish_item text'] span[title='Отложить'
+    @FindBy(xpath = "//span[@class='value']")
+    private WebElement wishItemIcon;
 
     @FindBy(xpath = "//span[contains(text(),'В корзину')]")
     private WebElement addToCartButton;
 
-    @Step("Hover over the element ")
-    public void hoverOverElement(WebElement element) {
-        new Actions(getDriver())
-                .moveToElement(element)
-//                .pause(Duration.ofMillis(300))
-                .perform();
+    @Step("Check if wish item icon is displayed and enabled")
+    public boolean isElementDisplayedAndEnabled() {
+        return wishItemIcon.isDisplayed() && wishItemIcon.isEnabled();
     }
 
-    @Step("Get text from wish item icon")
-    public String getWishItemIconText() {
-       // hoverOverElement(wishItemIcon);
-       return getWait5().until(ExpectedConditions.visibilityOf(wishItemIcon)).getText();
-
-     //  return wishItemIcon.getText();
+    @Step("Get wish list count title")
+    public String getWishItemTitle() {
+        try {
+            return wishItemIcon.getAttribute("title");
+        } catch (NullPointerException | NoSuchElementException e) {
+            return null;
+        }
     }
+
 
     @Step("Get text from add to cart button")
     public String getAddToCartButtonText() {

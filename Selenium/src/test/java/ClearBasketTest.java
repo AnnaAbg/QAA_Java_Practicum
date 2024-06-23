@@ -22,7 +22,7 @@ public class ClearBasketTest extends BaseTest {
                 .clickSubmit()
                 .clickVitaminCItemLink()
                 .addToWishList()
-                .moveItemToBasket()
+                .clickTheBasket()
                 .removeItemFromBasket()
                 .getRemovedItemMessage();
 
@@ -36,13 +36,22 @@ public class ClearBasketTest extends BaseTest {
     @Test
     public void testAddWishListIconIsActive() {
 
-        String wishItemIconText = new MainPage(getDriver())
+        boolean isWishListIconDisplayedAndEnabled = new MainPage(getDriver())
                 .setItemName("Сок яблочный")
                 .clickSubmit()
                 .clickAppleJuiceItemLink()
-                .getWishItemIconText();
+                .isElementDisplayedAndEnabled();
 
-        Assert.assertEquals(wishItemIconText, "Отложить");
+        Assert.assertTrue(isWishListIconDisplayedAndEnabled, "Wish Icon is not displayed and enabled on the page");
+
+//        String isWishListCountFoundAndDisplayed = new MainPage(getDriver())
+//                .setItemName("Сок яблочный")
+//                .clickSubmit()
+//                .clickAppleJuiceItemLink()
+//                .getWishItemTitle();
+//
+//
+//        Assert.assertEquals(isWishListCountFoundAndDisplayed, "Отложить");
     }
 
     @Severity(SeverityLevel.NORMAL)

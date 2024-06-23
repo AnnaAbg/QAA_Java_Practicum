@@ -42,7 +42,7 @@ public class VitaminCItemPage extends BasePage {
     }
 
     @Step("Move item to basket")
-    public BasketPage moveItemToBasket() {
+    public BasketPage clickTheBasket() {
         basket.click();
 
         return new BasketPage(getDriver());

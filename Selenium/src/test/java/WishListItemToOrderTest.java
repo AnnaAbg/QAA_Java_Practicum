@@ -22,7 +22,7 @@ public class WishListItemToOrderTest extends BaseTest {
                 .clickSubmit()
                 .clickVitaminCItemLink()
                 .addToWishList()
-                .moveItemToBasket()
+                .clickTheBasket()
                 .addItemToOrder()
                 .getPricePerItem();
 
