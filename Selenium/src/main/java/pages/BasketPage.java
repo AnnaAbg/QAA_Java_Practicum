@@ -45,32 +45,10 @@ public class BasketPage extends BasePage {
     @FindBy(xpath = "//div[@class='bx-sbb-empty-cart-text']")
     private WebElement emptyCartText;
 
-    @Step("Check if wish list basket count is displayed")
-    public boolean isWishListCountDisplayed() {
-        try {
-            return basketWishList.isDisplayed();
-        } catch (NullPointerException | org.openqa.selenium.NoSuchElementException e) {
-            return false;
-        }
-    }
-
-    @Step("Check if wish list basket count  is displayed")
-    public boolean isWishListCountDisplayed(String expectedTitle) {
-        try {
-            return basketWishList.getAttribute("title").equals(expectedTitle);
-        } catch (NullPointerException | NoSuchElementException e) {
-            return false;
-        }
-    }
     @Step("Get wish list count title")
     public String getWishListCountTitle() {
-        try {
-            return basketWishList.getAttribute("title");
-        } catch (NullPointerException | NoSuchElementException e) {
-            return null;
-        }
+        return basketWishList.getAttribute("title");
     }
-
 
     @Step("Add item to order")
     public BasketPage addItemToOrder() {

@@ -44,14 +44,7 @@ public class ClearBasketTest extends BaseTest {
 
         Assert.assertTrue(isWishListIconDisplayedAndEnabled, "Wish Icon is not displayed and enabled on the page");
 
-//        String isWishListCountFoundAndDisplayed = new MainPage(getDriver())
-//                .setItemName("Сок яблочный")
-//                .clickSubmit()
-//                .clickAppleJuiceItemLink()
-//                .getWishItemTitle();
-//
-//
-//        Assert.assertEquals(isWishListCountFoundAndDisplayed, "Отложить");
+
     }
 
     @Severity(SeverityLevel.NORMAL)

@@ -123,9 +123,5 @@ To get a clear report use the following command before running test
 * [ASHot](https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot)
 
 ### Аптека для Бережливых project tests Allure screenshots
-![Allure_Overview](https://github.com/AnnaAbg/QAA_Java_Practicum/assets/106620445/d9801c43-3596-4b2c-a6fa-ee32447dd0e1)
-![Allure_Behavior_FailedTest_1](https://github.com/AnnaAbg/QAA_Java_Practicum/assets/106620445/663cb28e-f9b3-4bea-9f57-bac3320b7a55)
-![Allure_Behavior_FailedTest_2](https://github.com/AnnaAbg/QAA_Java_Practicum/assets/106620445/aaac7c7e-ff21-4aca-8c9b-502f03673b5d)
-
-
+![Allure_Overview](https://github.com/AnnaAbg/QAA_Java_Practicum/assets/106620445/60225a4a-64da-4d5d-a4d1-86de5e868b5b)
 

@@ -38,16 +38,6 @@ public class BabyFoodIAppleJuiceItemPage extends BasePage {
         return wishItemIcon.isDisplayed() && wishItemIcon.isEnabled();
     }
 
-    @Step("Get wish list count title")
-    public String getWishItemTitle() {
-        try {
-            return wishItemIcon.getAttribute("title");
-        } catch (NullPointerException | NoSuchElementException e) {
-            return null;
-        }
-    }
-
-
     @Step("Get text from add to cart button")
     public String getAddToCartButtonText() {
         return addToCartButton.getText();
