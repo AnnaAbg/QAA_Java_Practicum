@@ -1,5 +1,3 @@
-package tests;
-
 import config.BaseConfig;
 import config.PopUpWindowConfig;
 import org.aeonbits.owner.ConfigFactory;

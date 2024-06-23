@@ -5,6 +5,7 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  * BasketPage class represents the page object for the basket page.
@@ -34,6 +35,8 @@ public class BasketPage extends BasePage {
     //div/a[@title='В отложенных товаров на 379 руб.']
     //By.cssSelector("a[rel='nofollow'].basket-link.delay.with_price.big.basket-count[href='/basket/#delayed'][title='В отложенных товаров на 379 руб.']")
 // //div[4]/div[1]/a[@title='В отложенных товаров на 379 руб.']
+
+
     @FindBy(xpath = "//a[@data-entity='basket-item-remove-delayed']")
     private WebElement addItemToOrder;
 
@@ -55,7 +58,7 @@ public class BasketPage extends BasePage {
 
     @Step("Get message for basket wish list count")
     public String getMessageForBasketWishListCount() {
-        return basketWishList.getText();
+        return getWait5().until(ExpectedConditions.visibilityOf(basketWishList)).getText();
     }
 
     @Step("Add item to order")

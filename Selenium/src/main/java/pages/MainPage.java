@@ -63,7 +63,7 @@ public class MainPage extends BasePage {
 
     @Step("Set item name in the search input field")
     public MainPage setItemName(String name) {
-        searchInputField.sendKeys(name);
+        getWait2().until(ExpectedConditions.visibilityOf(searchInputField)).sendKeys(name);
 
         return this;
     }
