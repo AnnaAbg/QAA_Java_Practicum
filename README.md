@@ -122,6 +122,6 @@ To get a clear report use the following command before running test
 * [Maven_Surefire_Plugin](https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin)
 * [ASHot](https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot)
 
-### Аптека для Бережливых project tests Allure screenshots
+### "Аптека для Бережливых" Project Tests Allure Screenshots
 ![Allure_Overview](https://github.com/AnnaAbg/QAA_Java_Practicum/assets/106620445/60225a4a-64da-4d5d-a4d1-86de5e868b5b)
 
