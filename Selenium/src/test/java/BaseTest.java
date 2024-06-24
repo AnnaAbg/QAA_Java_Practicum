@@ -59,7 +59,7 @@ public class BaseTest {
         driver.get(config.baseUrl());
 
         //  Maximize the window
-        // driver.manage().window().maximize();
+         driver.manage().window().maximize();
 
         // Add Cookie
         driver.manage().addCookie(new Cookie(popUpWindowConfig.cookieName(), popUpWindowConfig.cookieValue()));

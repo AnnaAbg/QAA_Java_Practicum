@@ -14,7 +14,7 @@ public class SearchItemTest extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     @Story("Verify Search Item Functionality")
     @Description("Verify searching for an item 'Витамин С' and verifying the page title.")
-    @Test
+    @Test(priority = 2)
     public void testSearchItem() throws InterruptedException {
         String itemName = new MainPage(getDriver())
                 .setItemName("Витамин С")

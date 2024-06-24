@@ -14,7 +14,7 @@ public class LogoIconTest extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     @Story("Logo Icon Display Verification")
     @Description("Verify that the logo icon is displayed on the main page.")
-    @Test
+    @Test(priority = 1)
     public void testLogoIcon() throws InterruptedException {
         boolean logoIcon = new MainPage(driver)
                 .isDisplayedLogoIcon();
